@@ -1,0 +1,19 @@
+{
+  "name": "@setupmoney/web",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "solid-js": "^1.9.14"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vite": "^8.2.0",
+    "vite-plugin-solid": "^2.11.14"
+  }
+}
