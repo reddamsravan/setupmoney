@@ -1,5 +1,14 @@
 import { render } from "solid-js/web";
-import App from "./app/app";
+import { createRouter, RouterProvider } from "@tanstack/solid-router";
+import { routeTree } from "./routeTree.gen";
+
+const router = createRouter({ routeTree });
+
+declare module "@tanstack/solid-router" {
+  interface Register {
+    router: typeof router;
+  }
+}
 
 const root = document.getElementById("app");
 
@@ -7,4 +16,4 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error("The required element with ID 'app' was not found.");
 }
 
-render(() => <App />, root!);
+render(() => <RouterProvider router={router} />, root!);
