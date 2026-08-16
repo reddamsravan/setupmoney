@@ -1,0 +1,6 @@
+pre-commit:
+  commands:
+    fmt:
+      run: pnpm fmt
+    lint:
+      run: pnpm lint:fix

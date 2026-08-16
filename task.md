@@ -133,9 +133,9 @@ All skills live under `.agents/skills/<name>/` with a `SKILL.md` and optional `s
 ### Phase 2 — Git Hygiene
 
 - [x] Expand `.gitignore` to cover `build/`, `dist/`, `.tanstack/`, OS files (`.DS_Store`), and editor files (`.vscode/`, `.idea/`)
-- [ ] Add `lefthook` as a root devDependency
-- [ ] Create `lefthook.yml` with a pre-commit hook that runs `pnpm fmt` then `pnpm lint:fix`
-- [ ] Add `"prepare": "lefthook install"` to root `package.json` scripts
+- [x] Add `lefthook` as a root devDependency
+- [x] Create `lefthook.yml` with a pre-commit hook that runs `pnpm fmt` then `pnpm lint:fix`
+- [x] Add `"prepare": "lefthook install"` to root `package.json` scripts
 
 ### Phase 3 — Documentation
 
