@@ -4,6 +4,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "pnpm run -r build",
     "dev": "pnpm run -r --parallel dev",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",

@@ -1,0 +1,11 @@
+{
+  "name": "@setupmoney/tokens",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "style-dictionary build"
+  },
+  "dependencies": {
+    "style-dictionary": "^5.5.1"
+  }
+}
