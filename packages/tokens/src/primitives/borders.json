@@ -1,0 +1,12 @@
+{
+  "border": {
+    "width": {
+      "1": { "value": "0.0625rem", "type": "dimension" },
+      "2": { "value": "0.125rem", "type": "dimension" }
+    },
+    "radius": {
+      "sm": { "value": "0.125rem", "type": "dimension" },
+      "md": { "value": "0.25rem", "type": "dimension" }
+    }
+  }
+}
