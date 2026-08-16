@@ -7,6 +7,9 @@ export default {
         {
           destination: "build/css/tokens.css",
           format: "css/variables",
+          options: {
+            outputReferences: true,
+          },
         },
       ],
       expand: true,

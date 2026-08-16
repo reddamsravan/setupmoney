@@ -1,8 +1,43 @@
 {
   "color": {
-    "red": {
-      "value": "#ff0000",
-      "type": "color"
+    "gray": {
+      "50": { "value": "oklch(0.985 0.002 247)", "type": "color" },
+      "100": { "value": "oklch(0.965 0.003 247)", "type": "color" },
+      "200": { "value": "oklch(0.920 0.004 247)", "type": "color" },
+      "300": { "value": "oklch(0.870 0.006 247)", "type": "color" },
+      "400": { "value": "oklch(0.705 0.015 247)", "type": "color" },
+      "500": { "value": "oklch(0.550 0.020 247)", "type": "color" },
+      "600": { "value": "oklch(0.440 0.022 247)", "type": "color" },
+      "700": { "value": "oklch(0.320 0.022 247)", "type": "color" },
+      "800": { "value": "oklch(0.220 0.020 247)", "type": "color" },
+      "900": { "value": "oklch(0.145 0.015 247)", "type": "color" },
+      "950": { "value": "oklch(0.090 0.010 247)", "type": "color" }
+    },
+    "brand": {
+      "black": { "value": "oklch(0.120 0.005 247)", "type": "color" },
+      "white": { "value": "oklch(0.995 0.001 247)", "type": "color" }
+    },
+    "accent": {
+      "blue": {
+        "100": { "value": "oklch(0.96 0.02 250)", "type": "color" },
+        "500": { "value": "oklch(0.55 0.20 250)", "type": "color" },
+        "700": { "value": "oklch(0.38 0.18 250)", "type": "color" }
+      },
+      "green": {
+        "100": { "value": "oklch(0.96 0.02 150)", "type": "color" },
+        "500": { "value": "oklch(0.62 0.18 150)", "type": "color" },
+        "700": { "value": "oklch(0.42 0.16 150)", "type": "color" }
+      },
+      "amber": {
+        "100": { "value": "oklch(0.97 0.03 80)", "type": "color" },
+        "500": { "value": "oklch(0.72 0.18 80)", "type": "color" },
+        "700": { "value": "oklch(0.50 0.16 80)", "type": "color" }
+      },
+      "red": {
+        "100": { "value": "oklch(0.96 0.03 25)", "type": "color" },
+        "500": { "value": "oklch(0.60 0.22 25)", "type": "color" },
+        "700": { "value": "oklch(0.42 0.20 25)", "type": "color" }
+      }
     }
   }
 }
