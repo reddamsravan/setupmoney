@@ -95,7 +95,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 
 ### Phase 4 — Utilities Package
 
-- [ ] Create `packages/utils` workspace package with its own `package.json` and `tsconfig.json`
+- [x] Create `packages/utils` workspace package with its own `package.json` and `tsconfig.json`
 - [ ] Add currency formatter utility (e.g. `formatCurrency(amount, currency)`)
 - [ ] Add date formatter utility (e.g. `formatDate(date, format)`)
 - [ ] Add number/percentage formatter utility

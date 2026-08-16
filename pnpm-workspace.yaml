@@ -2,4 +2,14 @@ packages:
   - "packages/*"
   - "apps/*"
 allowBuilds:
+  esbuild: true
   lefthook: true
+
+catalog:
+  "happy-dom": "^17.1.5"
+  "oxfmt": "^0.63.0"
+  "oxlint": "^1.78.0"
+  "solid-js": "^1.9.14"
+  "tsdown": "^0.22.14"
+  "typescript": "^7.0.2"
+  "vitest": "^4.1.10"

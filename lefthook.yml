@@ -4,3 +4,5 @@ pre-commit:
       run: pnpm fmt
     lint:
       run: pnpm lint:fix
+    test:
+      run: pnpm test

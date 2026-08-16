@@ -10,12 +10,13 @@
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
-    "prepare": "lefthook install"
+    "prepare": "lefthook install",
+    "test": "pnpm run -r test"
   },
   "devDependencies": {
     "lefthook": "^2.1.10",
-    "oxfmt": "^0.61.0",
-    "oxlint": "^1.76.0"
+    "oxfmt": "catalog:",
+    "oxlint": "catalog:"
   },
   "packageManager": "pnpm@11.18.0"
 }

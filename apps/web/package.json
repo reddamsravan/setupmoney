@@ -6,16 +6,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest run"
   },
   "dependencies": {
     "@tanstack/solid-router": "^1.170.18",
-    "solid-js": "^1.9.14"
+    "solid-js": "catalog:"
   },
   "devDependencies": {
     "@tanstack/router-plugin": "^1.168.23",
-    "typescript": "^7.0.2",
+    "happy-dom": "catalog:",
+    "typescript": "catalog:",
     "vite": "^8.2.0",
-    "vite-plugin-solid": "^2.11.14"
+    "vite-plugin-solid": "^2.11.14",
+    "vitest": "catalog:"
   }
 }
