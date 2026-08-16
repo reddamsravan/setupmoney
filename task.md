@@ -110,7 +110,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 - [x] Create root `AGENTS.md` covering: monorepo structure, package relationships, naming conventions (files, components, CSS variables), build/dev workflow, and "do not" rules (no Tailwind, no React, don't add dependencies without asking)
 - [x] Create `packages/tokens/AGENTS.md` with token authoring rules (file placement, token naming, how to add a new category)
 - [x] Create `packages/components/AGENTS.md` with component authoring rules (folder structure, CSS Modules co-location, barrel export pattern)
-- [ ] Create `.agents/skills/tokens/SKILL.md` with a Style Dictionary cheatsheet (adding primitives, semantic references, theme overrides)
+- [x] Create `.agents/skills/tokens/SKILL.md` with a Style Dictionary cheatsheet (adding primitives, semantic references, theme overrides)
 
 ### Phase 4 — Agent Skills
 
@@ -132,7 +132,7 @@ All skills live under `.agents/skills/<name>/` with a `SKILL.md` and optional `s
 
 ### Phase 2 — Git Hygiene
 
-- [ ] Expand `.gitignore` to cover `build/`, `dist/`, `.tanstack/`, OS files (`.DS_Store`), and editor files (`.vscode/`, `.idea/`)
+- [x] Expand `.gitignore` to cover `build/`, `dist/`, `.tanstack/`, OS files (`.DS_Store`), and editor files (`.vscode/`, `.idea/`)
 - [ ] Add `lefthook` as a root devDependency
 - [ ] Create `lefthook.yml` with a pre-commit hook that runs `pnpm fmt` then `pnpm lint:fix`
 - [ ] Add `"prepare": "lefthook install"` to root `package.json` scripts
