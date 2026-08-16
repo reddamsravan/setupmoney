@@ -16,8 +16,8 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
   - [ ] `typography.json` (Font family, font weights, font sizes, line heights, letter spacing in `rem`)
   - [x] `spacing.json` (Numeric pixel-equivalent scale `4`, `8`, `12`, `16`, `24`, `32`, `48`, `64` in `rem`)
   - [x] `sizing.json` (Component sizing scale in `rem`)
-  - [ ] `shadows.json` (Elevation box-shadow values)
-  - [ ] `borders.json` (Border radii, border widths in `rem`)
+  - [x] `shadows.json` (Elevation box-shadow values)
+  - [x] `borders.json` (Border radii, border widths in `rem`)
   - [ ] `motion.json` (Transition durations, easing curves)
   - [ ] `z-index.json` (Layer stacking order indices)
   - [ ] `breakpoints.json` (Responsive breakpoint widths in `rem`)
@@ -126,7 +126,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 All skills live under `.agents/skills/<name>/` with a `SKILL.md` and optional `scripts/` directory. Commit convention: **Conventional Commits** (`feat:`, `fix:`, `chore:`, `docs:`, `refactor:`, `test:`) + Changesets for changelog.
 
 - [x] Create `.agents/skills/add-token/SKILL.md` — step-by-step guide for adding a new Style Dictionary token category (primitive JSON → semantic reference → theme override → `pnpm build` in tokens package)
-- [ ] Create `.agents/skills/add-component/SKILL.md` — guide for scaffolding a new SolidJS component in `@setupmoney/components` (create folder under `src/<category>/`, TSX file, CSS Module, add to `src/index.ts` barrel export, rebuild with tsdown)
+- [x] Create `.agents/skills/add-component/SKILL.md` — guide for scaffolding a new SolidJS component in `@setupmoney/components` (create folder under `src/<category>/`, TSX file, CSS Module, add to `src/index.ts` barrel export, rebuild with tsdown)
 - [ ] Create `.agents/skills/add-go-domain/SKILL.md` + `scripts/` — guide for adding a new Go domain (`internal/<domain>/handler.go`, `service.go`, `repo.go`, goose migration, sqlc query file, `make generate`, unit tests with mocked repo)
 - [ ] Create `.agents/skills/add-api-endpoint/SKILL.md` — guide for adding a single REST endpoint to an existing Go domain end-to-end (sqlc query → repo method → service method → handler → Chi route registration)
 - [ ] Create `.agents/skills/add-route/SKILL.md` — guide for adding a new TanStack Router file-based route to `apps/web` (create file in `src/routes/`, add nav link, run dev to verify `routeTree.gen.ts` updates)
