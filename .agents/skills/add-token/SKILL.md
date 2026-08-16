@@ -16,6 +16,7 @@ Use this skill when adding or updating design tokens in `@setupmoney/tokens`.
 Primitives define raw values (scales, colors, measurements). Place them in `packages/tokens/src/primitives/<category>.json`.
 
 Example (`packages/tokens/src/primitives/color.json`):
+
 ```json
 {
   "color": {
@@ -31,6 +32,7 @@ Example (`packages/tokens/src/primitives/color.json`):
 Semantic tokens assign intent/context by referencing primitive tokens using Style Dictionary alias syntax (`{category.subcategory.item}`). Place them in `packages/tokens/src/semantic/<category>.json`.
 
 Example (`packages/tokens/src/semantic/color.json`):
+
 ```json
 {
   "color": {
@@ -46,6 +48,7 @@ Example (`packages/tokens/src/semantic/color.json`):
 If the token varies between light and dark modes, add overrides in `packages/tokens/src/themes/light.json` or `packages/tokens/src/themes/dark.json`.
 
 Example (`packages/tokens/src/themes/dark.json`):
+
 ```json
 {
   "color": {

@@ -31,6 +31,7 @@ Tokens are structured in three distinct layers under `src/`:
 ## Token Workflow
 
 When adding or updating tokens:
+
 1. Edit JSON files under `src/primitives/`, `src/semantic/`, or `src/themes/`.
 2. Run `pnpm build` inside `packages/tokens/`.
 3. Inspect `build/css/tokens.css` to verify output custom properties.
