@@ -64,7 +64,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 ### Phase 3 — Styling
 
 - [ ] Co-locate `.module.css` file per component using `--color-*` CSS token variables
-- [ ] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `packages/components`
+- [x] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `packages/components`
 
 ### Phase 4 — Wiring
 

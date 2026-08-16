@@ -44,9 +44,18 @@ importers:
 
   apps/web:
     dependencies:
+      '@setupmoney/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
+      '@setupmoney/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@tanstack/solid-router':
         specifier: ^1.170.18
         version: 1.170.18(solid-js@1.9.14)
+      lucide-solid:
+        specifier: ^1.31.0
+        version: 1.31.0(solid-js@1.9.14)
       solid-js:
         specifier: 'catalog:'
         version: 1.9.14
@@ -1848,6 +1857,11 @@ packages:
 
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
+
+  lucide-solid@1.31.0:
+    resolution: {integrity: sha512-yRJChFmaeWF8+hmm/9s2O0NrlQVr/t/p11Hd9+MON0biY0a7LLeCYZ/yH4s2G5df6vNP8hhmZsoi2v46v4rgKQ==}
+    peerDependencies:
+      solid-js: ^1.4.7
 
   magic-string@0.30.21:
     resolution: {integrity: sha512-vd2F4YUyEXKGcLHoq+TEyCjxueSeHnFxyyjNp80yg0XV4vUhnDer/lvvlqM/arB5bXQN5K2/3oinyCRyx8T2CQ==}
@@ -3713,6 +3727,10 @@ snapshots:
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
+
+  lucide-solid@1.31.0(solid-js@1.9.14):
+    dependencies:
+      solid-js: 1.9.14
 
   magic-string@0.30.21:
     dependencies:
