@@ -21,7 +21,18 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
   - [x] `motion.json` (Transition durations, easing curves)
   - [x] `z-index.json` (Layer stacking order indices)
   - [x] `breakpoints.json` (Responsive breakpoint widths in `rem`)
-- [ ] Add `src/semantic/` layer with tokens that reference primitives (e.g. `color.background.primary → {color.blue.600}`)
+- [ ] Add `src/semantic/` layer with tokens that reference primitives:
+  - [ ] Domain semantic tokens:
+    - [x] `colors.json` (Backgrounds, text, borders, surface, feedback/intent semantics)
+    - [ ] `typography.json` (Heading, body, caption, code typography styles)
+    - [ ] `spacing.json` (Layout gap, container padding, component inset semantics)
+    - [ ] `elevation.json` (Card, popover, modal, toast shadow semantics)
+  - [ ] Component semantic tokens:
+    - [x] `sidebar.json` (Background, border, nav item hover/active state tokens)
+    - [ ] `button.json` (Primary, secondary, ghost, danger variant tokens)
+    - [ ] `card.json` (Card surface background, border, padding tokens)
+    - [ ] `input.json` (Field background, border, focus ring, placeholder tokens)
+    - [ ] `modal.json` (Overlay background, dialog surface, header/body/footer padding tokens)
 - [ ] Add `src/themes/` with `light.json` and `dark.json` to override semantic tokens per theme
 
 ### Phase 2 — Style Dictionary Config
