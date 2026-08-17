@@ -1,0 +1,30 @@
+{
+  "button": {
+    "primary": {
+      "background": { "value": "{color.brand.black}", "type": "color" },
+      "text": { "value": "{color.brand.white}", "type": "color" },
+      "hover": { "value": "{color.gray.800}", "type": "color" }
+    },
+    "secondary": {
+      "background": { "value": "{color.gray.100}", "type": "color" },
+      "text": { "value": "{color.brand.black}", "type": "color" },
+      "hover": { "value": "{color.gray.200}", "type": "color" }
+    },
+    "ghost": {
+      "background": { "value": "transparent", "type": "color" },
+      "text": { "value": "{color.gray.700}", "type": "color" },
+      "hover": { "value": "{color.gray.100}", "type": "color" }
+    },
+    "danger": {
+      "background": { "value": "{color.accent.red.500}", "type": "color" },
+      "text": { "value": "{color.brand.white}", "type": "color" },
+      "hover": { "value": "{color.accent.red.700}", "type": "color" }
+    },
+    "padding": {
+      "sm": { "value": "{spacing.4} {spacing.8}", "type": "dimension" },
+      "md": { "value": "{spacing.8} {spacing.16}", "type": "dimension" },
+      "lg": { "value": "{spacing.12} {spacing.24}", "type": "dimension" }
+    },
+    "border-radius": { "value": "{border.radius.md}", "type": "dimension" }
+  }
+}

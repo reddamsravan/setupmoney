@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "build": "style-dictionary build"
+    "build": "node build.js"
   },
   "dependencies": {
     "style-dictionary": "^5.5.1"

@@ -1,0 +1,21 @@
+{
+  "color": {
+    "bg": {
+      "default": { "value": "{color.brand.white}", "type": "color" },
+      "subtle": { "value": "{color.gray.50}", "type": "color" },
+      "muted": { "value": "{color.gray.100}", "type": "color" },
+      "emphasis": { "value": "{color.brand.black}", "type": "color" }
+    },
+    "text": {
+      "primary": { "value": "{color.brand.black}", "type": "color" },
+      "secondary": { "value": "{color.gray.600}", "type": "color" },
+      "muted": { "value": "{color.gray.500}", "type": "color" },
+      "inverse": { "value": "{color.brand.white}", "type": "color" }
+    },
+    "border": {
+      "default": { "value": "{color.gray.200}", "type": "color" },
+      "subtle": { "value": "{color.gray.100}", "type": "color" },
+      "strong": { "value": "{color.gray.300}", "type": "color" }
+    }
+  }
+}

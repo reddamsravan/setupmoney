@@ -1,0 +1,13 @@
+{
+  "card": {
+    "background": { "value": "{color.bg.default}", "type": "color" },
+    "border": { "value": "{color.border.default}", "type": "color" },
+    "border-radius": { "value": "{border.radius.md}", "type": "dimension" },
+    "shadow": { "value": "{elevation.card}", "type": "shadow" },
+    "padding": {
+      "sm": { "value": "{spacing.12}", "type": "dimension" },
+      "md": { "value": "{spacing.16}", "type": "dimension" },
+      "lg": { "value": "{spacing.24}", "type": "dimension" }
+    }
+  }
+}

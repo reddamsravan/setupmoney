@@ -21,19 +21,22 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
   - [x] `motion.json` (Transition durations, easing curves)
   - [x] `z-index.json` (Layer stacking order indices)
   - [x] `breakpoints.json` (Responsive breakpoint widths in `rem`)
-- [ ] Add `src/semantic/` layer with tokens that reference primitives:
-  - [ ] Domain semantic tokens:
+- [x] Add `src/semantic/` layer with tokens that reference primitives:
+  - [x] Domain semantic tokens:
     - [x] `colors.json` (Backgrounds, text, borders, surface, feedback/intent semantics)
     - [x] `typography.json` (Heading, body, caption, code typography styles)
     - [x] `spacing.json` (Layout gap, container padding, component inset semantics)
     - [x] `elevation.json` (Card, popover, modal, toast shadow semantics)
-  - [ ] Component semantic tokens:
+  - [x] Component semantic tokens:
     - [x] `sidebar.json` (Background, border, nav item hover/active state tokens)
-    - [ ] `button.json` (Primary, secondary, ghost, danger variant tokens)
-    - [ ] `card.json` (Card surface background, border, padding tokens)
-    - [ ] `input.json` (Field background, border, focus ring, placeholder tokens)
-    - [ ] `modal.json` (Overlay background, dialog surface, header/body/footer padding tokens)
-- [ ] Add `src/themes/` with `light.json` and `dark.json` to override semantic tokens per theme
+    - [x] `button.json` (Primary, secondary, ghost, danger variant tokens)
+    - [x] `card.json` (Card surface background, border, padding tokens)
+    - [x] `input.json` (Field background, border, focus ring, placeholder tokens)
+    - [x] `modal.json` (Overlay background, dialog surface, header/body/footer padding tokens)
+- [x] Add `src/themes/` with `light.json` and `dark.json` to override semantic tokens per theme:
+  - [x] Create `src/themes/light.json` containing light theme specific semantic color overrides (backgrounds, surfaces, text, borders)
+  - [x] Create `src/themes/dark.json` containing dark theme specific semantic color overrides (backgrounds, surfaces, text, borders)
+  - [x] Update `packages/tokens/config.js` to output light/dark CSS custom property bundles with support for `:root` (light default), `@media (prefers-color-scheme: dark)`, and explicit `[data-theme="dark"]` / `[data-theme="light"]` attribute overrides
 
 ### Phase 2 — Style Dictionary Config
 
