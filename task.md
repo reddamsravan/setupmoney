@@ -18,7 +18,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
   - [x] `sizing.json` (Component sizing scale in `rem`)
   - [x] `shadows.json` (Elevation box-shadow values)
   - [x] `borders.json` (Border radii, border widths in `rem`)
-  - [ ] `motion.json` (Transition durations, easing curves)
+  - [x] `motion.json` (Transition durations, easing curves)
   - [ ] `z-index.json` (Layer stacking order indices)
   - [ ] `breakpoints.json` (Responsive breakpoint widths in `rem`)
 - [ ] Add `src/semantic/` layer with tokens that reference primitives (e.g. `color.background.primary → {color.blue.600}`)
