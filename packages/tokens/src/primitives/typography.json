@@ -1,0 +1,43 @@
+{
+  "typography": {
+    "font-family": {
+      "sans": {
+        "value": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+        "type": "fontFamily"
+      },
+      "mono": {
+        "value": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace",
+        "type": "fontFamily"
+      }
+    },
+    "font-weight": {
+      "regular": { "value": "400", "type": "fontWeight" },
+      "medium": { "value": "500", "type": "fontWeight" },
+      "semibold": { "value": "600", "type": "fontWeight" },
+      "bold": { "value": "700", "type": "fontWeight" }
+    },
+    "font-size": {
+      "12": { "value": "0.75rem", "type": "dimension" },
+      "14": { "value": "0.875rem", "type": "dimension" },
+      "16": { "value": "1rem", "type": "dimension" },
+      "18": { "value": "1.125rem", "type": "dimension" },
+      "20": { "value": "1.25rem", "type": "dimension" },
+      "24": { "value": "1.5rem", "type": "dimension" },
+      "30": { "value": "1.875rem", "type": "dimension" },
+      "36": { "value": "2.25rem", "type": "dimension" }
+    },
+    "line-height": {
+      "none": { "value": "1", "type": "lineHeight" },
+      "tight": { "value": "1.25", "type": "lineHeight" },
+      "snug": { "value": "1.375", "type": "lineHeight" },
+      "normal": { "value": "1.5", "type": "lineHeight" },
+      "relaxed": { "value": "1.625", "type": "lineHeight" }
+    },
+    "letter-spacing": {
+      "tighter": { "value": "-0.05em", "type": "letterSpacing" },
+      "tight": { "value": "-0.025em", "type": "letterSpacing" },
+      "normal": { "value": "0em", "type": "letterSpacing" },
+      "wide": { "value": "0.025em", "type": "letterSpacing" }
+    }
+  }
+}

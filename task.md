@@ -13,7 +13,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 
 - [ ] Add primitive token files under `src/primitives/` for all categories:
   - [x] `colors.json` (OKLCH color scales: gray, primary blue, success green, warning amber, error red)
-  - [ ] `typography.json` (Font family, font weights, font sizes, line heights, letter spacing in `rem`)
+  - [x] `typography.json` (Font family, font weights, font sizes, line heights, letter spacing in `rem`)
   - [x] `spacing.json` (Numeric pixel-equivalent scale `4`, `8`, `12`, `16`, `24`, `32`, `48`, `64` in `rem`)
   - [x] `sizing.json` (Component sizing scale in `rem`)
   - [x] `shadows.json` (Elevation box-shadow values)
