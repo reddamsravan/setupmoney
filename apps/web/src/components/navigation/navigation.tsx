@@ -2,6 +2,7 @@ import { createSignal, onMount, onCleanup, For, Show, type Component } from "sol
 import { Link, useLocation } from "@tanstack/solid-router";
 import { Sidebar } from "@setupmoney/components";
 import { SHORTCUTS, registerShortcutListener } from "@setupmoney/utils";
+import { t } from "@setupmoney/i18n";
 import LayoutDashboard from "lucide-solid/icons/layout-dashboard";
 import Receipt from "lucide-solid/icons/receipt";
 import Wallet from "lucide-solid/icons/wallet";
@@ -13,18 +14,29 @@ import styles from "./navigation.module.css";
 
 export interface NavItemDef {
   to: string;
-  label: string;
+  key: string;
+  getLabel: () => string;
   icon: Component<{ size?: number | string; class?: string }>;
 }
 
 export const NAV_ITEMS: NavItemDef[] = [
-  { to: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { to: "/transactions", label: "Transactions", icon: Receipt },
-  { to: "/accounts", label: "Accounts", icon: Wallet },
-  { to: "/budget", label: "Budget", icon: PiggyBank },
-  { to: "/goals", label: "Goals", icon: Target },
-  { to: "/assets", label: "Assets", icon: LineChart },
-  { to: "/reports", label: "Reports", icon: BarChart3 },
+  {
+    to: "/dashboard",
+    key: "dashboard",
+    getLabel: () => t("common.dashboard"),
+    icon: LayoutDashboard,
+  },
+  {
+    to: "/transactions",
+    key: "transactions",
+    getLabel: () => t("common.transactions"),
+    icon: Receipt,
+  },
+  { to: "/accounts", key: "accounts", getLabel: () => t("common.accounts"), icon: Wallet },
+  { to: "/budget", key: "budget", getLabel: () => t("common.budget"), icon: PiggyBank },
+  { to: "/goals", key: "goals", getLabel: () => t("common.goals"), icon: Target },
+  { to: "/assets", key: "assets", getLabel: () => t("common.assets"), icon: LineChart },
+  { to: "/reports", key: "reports", getLabel: () => t("common.reports"), icon: BarChart3 },
 ];
 
 export const Navigation: Component = () => {
@@ -52,14 +64,15 @@ export const Navigation: Component = () => {
                 const isActive = () =>
                   location().pathname === item.to ||
                   (item.to === "/dashboard" && location().pathname === "/");
+                const label = () => item.getLabel();
 
                 return (
-                  <Sidebar.Item active={isActive()} title={item.label}>
+                  <Sidebar.Item active={isActive()} title={label()}>
                     {(itemProps) => (
                       <Link to={item.to} class={itemProps.class}>
                         <Icon size={18} style={{ "flex-shrink": 0 }} />
                         <Show when={!itemProps.collapsed}>
-                          <span class={styles.navLabel}>{item.label}</span>
+                          <span class={styles.navLabel}>{label()}</span>
                         </Show>
                       </Link>
                     )}
@@ -83,15 +96,16 @@ export const Navigation: Component = () => {
             const isActive = () =>
               location().pathname === item.to ||
               (item.to === "/dashboard" && location().pathname === "/");
+            const label = () => item.getLabel();
 
             return (
               <Link
                 to={item.to}
                 class={`${styles.mobileNavItem} ${isActive() ? styles.mobileActive : ""}`}
-                aria-label={item.label}
+                aria-label={label()}
               >
                 <Icon size={20} />
-                <span class={styles.mobileNavLabel}>{item.label}</span>
+                <span class={styles.mobileNavLabel}>{label()}</span>
               </Link>
             );
           }}

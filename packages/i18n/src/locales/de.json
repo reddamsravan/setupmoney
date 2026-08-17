@@ -1,0 +1,18 @@
+{
+  "common": {
+    "appName": "setupmoney",
+    "dashboard": "Übersicht",
+    "transactions": "Transaktionen",
+    "accounts": "Konten",
+    "budget": "Budget",
+    "goals": "Ziele",
+    "assets": "Vermögenswerte",
+    "reports": "Berichte"
+  },
+  "goals": {
+    "title": "Finanzielle Ziele",
+    "subtitle": "Verfolgen Sie Ihren Fortschritt bei langfristigen Sparzielen und Investitionen",
+    "heldIn": "Gehalten in",
+    "investedIn": "Investiert in"
+  }
+}

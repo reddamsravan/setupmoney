@@ -50,6 +50,9 @@ importers:
       '@setupmoney/components':
         specifier: workspace:*
         version: link:../../packages/components
+      '@setupmoney/i18n':
+        specifier: workspace:*
+        version: link:../../packages/i18n
       '@setupmoney/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
@@ -100,6 +103,19 @@ importers:
       vite-plugin-solid:
         specifier: ^2.11.14
         version: 2.11.14(solid-js@1.9.14)(vite@8.2.0(esbuild@0.28.2)(jiti@2.7.0))
+      vitest:
+        specifier: 'catalog:'
+        version: 4.1.10(happy-dom@17.6.3)(vite@8.2.0(esbuild@0.28.2)(jiti@2.7.0))
+
+  packages/i18n:
+    dependencies:
+      solid-js:
+        specifier: 'catalog:'
+        version: 1.9.14
+    devDependencies:
+      tsdown:
+        specifier: 'catalog:'
+        version: 0.22.14(typescript@7.0.2)
       vitest:
         specifier: 'catalog:'
         version: 4.1.10(happy-dom@17.6.3)(vite@8.2.0(esbuild@0.28.2)(jiti@2.7.0))
