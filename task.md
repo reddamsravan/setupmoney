@@ -11,7 +11,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 
 ### Phase 1 — Token Structure
 
-- [ ] Add primitive token files under `src/primitives/` for all categories:
+- [x] Add primitive token files under `src/primitives/` for all categories:
   - [x] `colors.json` (OKLCH color scales: gray, primary blue, success green, warning amber, error red)
   - [x] `typography.json` (Font family, font weights, font sizes, line heights, letter spacing in `rem`)
   - [x] `spacing.json` (Numeric pixel-equivalent scale `4`, `8`, `12`, `16`, `24`, `32`, `48`, `64` in `rem`)
@@ -24,7 +24,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 - [ ] Add `src/semantic/` layer with tokens that reference primitives:
   - [ ] Domain semantic tokens:
     - [x] `colors.json` (Backgrounds, text, borders, surface, feedback/intent semantics)
-    - [ ] `typography.json` (Heading, body, caption, code typography styles)
+    - [x] `typography.json` (Heading, body, caption, code typography styles)
     - [ ] `spacing.json` (Layout gap, container padding, component inset semantics)
     - [ ] `elevation.json` (Card, popover, modal, toast shadow semantics)
   - [ ] Component semantic tokens:
