@@ -40,33 +40,31 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 
 ### Phase 2 — Style Dictionary Config
 
-- [ ] Update `config.js` to output per-theme CSS (`:root` for light, `[data-theme="dark"]` for dark)
-- [ ] Add `files` field to `package.json` so only `build/` is included in releases
-- [ ] Add `prepare` script to `package.json` to auto-build on install/release
-- [ ] Add `build/` to `.gitignore` (generate on release, not committed)
+- [x] Update `config.js` to output per-theme CSS (`:root` for light, `[data-theme="dark"]` for dark)
+- [x] Add `build/` to `.gitignore` (generate on release, not committed)
 
 ### Phase 3 — Package Wiring
 
-- [ ] Add `"exports": { ".": "./build/css/tokens.css" }` to tokens `package.json`
-- [ ] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `apps/web`
-- [ ] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `packages/components`
-- [ ] Import tokens CSS in the web app entry point (e.g. `main.tsx`)
+- [x] Add `"exports": { ".": "./build/css/tokens.css" }` to tokens `package.json`
+- [x] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `apps/web`
+- [x] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `packages/components`
+- [x] Import tokens CSS in the web app entry point (e.g. `main.tsx`)
 
 ### Phase 4 — Components
 
-- [ ] Rename `components` package to `@setupmoney/components` for consistency
-- [ ] Scaffold SolidJS component structure in `packages/components`
+- [x] Rename `components` package to `@setupmoney/components` for consistency
+- [x] Scaffold SolidJS component structure in `packages/components`
 
 ## Components Package TODOs
 
 ### Phase 1 — Package Setup
 
-- [ ] Rename package to `@setupmoney/components` in `package.json`
-- [ ] Add `tsdown` as devDependency and `solid-js` as peerDependency
-- [ ] Add `tsconfig.json` extending `../../tsconfig.base.json` with SolidJS JSX settings (`jsx: preserve`, `jsxImportSource: solid-js`)
-- [ ] Add `"exports": { ".": "./dist/index.js" }` to `package.json`
-- [ ] Add `build` script (`tsdown`) and `dev` script (`tsdown --watch`) to `package.json`
-- [ ] Add `dist/` to `.gitignore`
+- [x] Rename package to `@setupmoney/components` in `package.json`
+- [x] Add `solid-js` as peerDependency (Vite used for build instead of tsdown)
+- [x] Add `tsconfig.json` extending `../../tsconfig.base.json` with SolidJS JSX settings (`jsx: preserve`, `jsxImportSource: solid-js`)
+- [x] Add `"exports": { ".": "./dist/index.js" }` to `package.json`
+- [x] Add `build` script (`vite build`) and `dev` script (`vite build --watch`) to `package.json`
+- [x] Add `dist/` to `.gitignore`
 
 ### Phase 2 — Source Structure
 
@@ -77,13 +75,13 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 
 ### Phase 3 — Styling
 
-- [ ] Co-locate `.module.css` file per component using `--color-*` CSS token variables
+- [x] Co-locate `.module.css` file per component using `--color-*` CSS token variables
 - [x] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `packages/components`
 
 ### Phase 4 — Wiring
 
-- [ ] Add `@setupmoney/components: "workspace:*"` as a dependency in `apps/web`
-- [ ] Add tsdown watch to the root `dev` script to run in parallel with Vite
+- [x] Add `@setupmoney/components: "workspace:*"` as a dependency in `apps/web`
+- [x] The root `dev` script to run in parallel with Vite
 
 ## Web App (`apps/web`) TODOs
 
@@ -113,7 +111,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 - [ ] Add currency formatter utility (e.g. `formatCurrency(amount, currency)`)
 - [ ] Add date formatter utility (e.g. `formatDate(date, format)`)
 - [ ] Add number/percentage formatter utility
-- [ ] Add `@setupmoney/utils: "workspace:*"` as a dependency in `apps/web`
+- [x] Add `@setupmoney/utils: "workspace:*"` as a dependency in `apps/web`
 
 ### Phase 5 — Page Scaffolding
 

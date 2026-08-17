@@ -47,6 +47,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@setupmoney/components':
+        specifier: workspace:*
+        version: link:../../packages/components
       '@setupmoney/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
