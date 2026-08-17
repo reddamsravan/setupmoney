@@ -95,12 +95,30 @@ pnpm build        # Run Style Dictionary to regenerate build/css/tokens.css
 
 ## Hard Constraints
 
+- **Always follow Test-Driven Development (TDD)**: Write failing tests FIRST before writing or modifying any implementation code. Run the failing test to confirm red status, implement minimal code to pass (green), and refactor.
 - **Never install a new dependency** (npm or Go) without asking the user first.
 - **Never modify auto-generated files**: `src/routeTree.gen.ts` and all files under `services/app-service/db/generated/` are auto-generated — do not edit them by hand.
 - **Always run `pnpm fmt` and `pnpm lint:fix`** after making changes to JS/TS files.
 - **Always run `go vet ./...`** after making changes to Go files.
 - **Never commit `.env` files** or any file containing secrets. Only `.env.example` is committed.
 - **Never use GORM** for database access. All DB queries go through sqlc-generated code.
+
+---
+
+## Test-Driven Development (TDD) Workflow
+
+Every feature, bugfix, utility, UI component, and API endpoint MUST follow the strict **Red-Green-Refactor** TDD cycle:
+
+1. **Red (Write Failing Test)**:
+   - **JS/TS packages (`apps/web`, `packages/components`, `packages/utils`)**: Create/update unit tests using Vitest (`.test.ts` / `.test.tsx`).
+   - **Go service (`services/app-service`)**: Create/update Go unit/handler tests (`*_test.go`).
+   - Run the test suite (`pnpm test` or `go test ./...`) and verify that the test **fails** for the expected reason.
+2. **Green (Minimal Implementation)**:
+   - Write the minimum amount of production code required to make the failing test pass.
+   - Re-run the test suite to verify all tests **pass cleanly**.
+3. **Refactor (Clean & Optimize)**:
+   - Refactor code and styles while keeping tests passing.
+   - Run linter/formatter (`pnpm fmt`, `pnpm lint:fix`, `go vet ./...`).
 
 ---
 
