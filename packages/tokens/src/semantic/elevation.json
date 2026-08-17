@@ -1,0 +1,8 @@
+{
+  "elevation": {
+    "card": { "value": "{shadow.sm}", "type": "shadow" },
+    "dropdown": { "value": "{shadow.md}", "type": "shadow" },
+    "modal": { "value": "{shadow.lg}", "type": "shadow" },
+    "toast": { "value": "{shadow.xl}", "type": "shadow" }
+  }
+}

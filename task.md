@@ -26,7 +26,7 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
     - [x] `colors.json` (Backgrounds, text, borders, surface, feedback/intent semantics)
     - [x] `typography.json` (Heading, body, caption, code typography styles)
     - [x] `spacing.json` (Layout gap, container padding, component inset semantics)
-    - [ ] `elevation.json` (Card, popover, modal, toast shadow semantics)
+    - [x] `elevation.json` (Card, popover, modal, toast shadow semantics)
   - [ ] Component semantic tokens:
     - [x] `sidebar.json` (Background, border, nav item hover/active state tokens)
     - [ ] `button.json` (Primary, secondary, ghost, danger variant tokens)
