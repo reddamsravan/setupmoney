@@ -24,6 +24,9 @@ catalogs:
     typescript:
       specifier: ^7.0.2
       version: 7.0.2
+    vite:
+      specifier: ^8.2.0
+      version: 8.2.0
     vitest:
       specifier: ^4.1.10
       version: 4.1.10
@@ -70,7 +73,7 @@ importers:
         specifier: 'catalog:'
         version: 7.0.2
       vite:
-        specifier: ^8.2.0
+        specifier: 'catalog:'
         version: 8.2.0(esbuild@0.28.2)(jiti@2.7.0)
       vite-plugin-solid:
         specifier: ^2.11.14
@@ -80,10 +83,20 @@ importers:
         version: 4.1.10(happy-dom@17.6.3)(vite@8.2.0(esbuild@0.28.2)(jiti@2.7.0))
 
   packages/components:
+    dependencies:
+      solid-js:
+        specifier: 'catalog:'
+        version: 1.9.14
     devDependencies:
       happy-dom:
         specifier: 'catalog:'
         version: 17.6.3
+      vite:
+        specifier: 'catalog:'
+        version: 8.2.0(esbuild@0.28.2)(jiti@2.7.0)
+      vite-plugin-solid:
+        specifier: ^2.11.14
+        version: 2.11.14(solid-js@1.9.14)(vite@8.2.0(esbuild@0.28.2)(jiti@2.7.0))
       vitest:
         specifier: 'catalog:'
         version: 4.1.10(happy-dom@17.6.3)(vite@8.2.0(esbuild@0.28.2)(jiti@2.7.0))

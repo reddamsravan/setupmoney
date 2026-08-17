@@ -1,0 +1,17 @@
+/* CSS Reset & Base tokens */
+@import "@setupmoney/tokens/build/css/tokens.css";
+@import "@setupmoney/components/dist/components.css";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--sidebar-item-text-active);
+  background-color: var(--color-brand-white);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}

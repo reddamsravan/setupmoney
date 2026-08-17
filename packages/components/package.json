@@ -1,17 +1,30 @@
 {
-  "name": "components",
+  "name": "@setupmoney/components",
   "version": "0.0.0",
-  "description": "",
-  "keywords": [],
-  "license": "MIT",
-  "author": "",
   "type": "module",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./dist/components.css": "./dist/components.css"
+  },
   "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch",
     "test": "vitest run"
   },
   "devDependencies": {
     "happy-dom": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-solid": "^2.11.14",
     "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "solid-js": "catalog:"
   }
 }

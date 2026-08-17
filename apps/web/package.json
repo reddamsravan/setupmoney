@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "test": "vitest run"
   },
   "dependencies": {
@@ -19,7 +20,7 @@
     "@tanstack/router-plugin": "^1.168.23",
     "happy-dom": "catalog:",
     "typescript": "catalog:",
-    "vite": "^8.2.0",
+    "vite": "catalog:",
     "vite-plugin-solid": "^2.11.14",
     "vitest": "catalog:"
   }

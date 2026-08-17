@@ -57,9 +57,9 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 ### Phase 2 — Source Structure
 
 - [ ] Create `src/forms/` — Button, Input, Select, Checkbox components
-- [ ] Create `src/layout/` — Card, Sidebar/Nav, Table components
+- [x] Create `src/layout/` — Card, Sidebar/Nav, Table components
 - [ ] Create `src/feedback/` — Badge, Modal, Spinner, Toast, Avatar components
-- [ ] Create `src/index.ts` as a barrel file re-exporting all components
+- [x] Create `src/index.ts` as a barrel file re-exporting all components
 
 ### Phase 3 — Styling
 
@@ -75,17 +75,17 @@ A personal finance web app built as a pnpm monorepo. The project is organized in
 
 ### Phase 1 — Foundation
 
-- [ ] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `apps/web`
-- [ ] Add `@setupmoney/components: "workspace:*"` as a dependency in `apps/web`
-- [ ] Create `src/styles/global.css` with CSS reset and base styles
-- [ ] Import `global.css` and tokens CSS in `main.tsx`
+- [x] Add `@setupmoney/tokens: "workspace:*"` as a dependency in `apps/web`
+- [x] Add `@setupmoney/components: "workspace:*"` as a dependency in `apps/web`
+- [x] Create `src/styles/global.css` with CSS reset and base styles
+- [x] Import `global.css` and tokens CSS in `main.tsx`
 - [ ] Redirect `/` → `/dashboard` (update `index.tsx` or convert to a redirect)
 
 ### Phase 2 — Layout Shell
 
-- [ ] Refactor `__root.tsx` into a shell layout with collapsible sidebar (desktop) and bottom tab bar (mobile)
-- [ ] Remove `/about` from primary nav
-- [ ] Delegate sidebar/nav rendering to `Sidebar` component from `@setupmoney/components`
+- [x] Refactor `__root.tsx` into a shell layout with collapsible sidebar (desktop) and bottom tab bar (mobile)
+- [x] Remove `/about` from primary nav
+- [x] Delegate sidebar/nav rendering to `Sidebar` component from `@setupmoney/components`
 
 ### Phase 3 — Shared State
 
