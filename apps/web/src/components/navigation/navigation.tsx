@@ -4,11 +4,11 @@ import { Sidebar } from "@setupmoney/components";
 import { SHORTCUTS, registerShortcutListener } from "@setupmoney/utils";
 import { t } from "@setupmoney/i18n";
 import LayoutDashboard from "lucide-solid/icons/layout-dashboard";
-import Receipt from "lucide-solid/icons/receipt";
+import ReceiptText from "lucide-solid/icons/receipt-text";
 import Wallet from "lucide-solid/icons/wallet";
 import PiggyBank from "lucide-solid/icons/piggy-bank";
 import Target from "lucide-solid/icons/target";
-import LineChart from "lucide-solid/icons/line-chart";
+import Coins from "lucide-solid/icons/coins";
 import BarChart3 from "lucide-solid/icons/bar-chart-3";
 import { ThemeToggle } from "../theme-toggle/theme-toggle";
 import styles from "./navigation.module.css";
@@ -31,12 +31,12 @@ export const NAV_ITEMS: NavItemDef[] = [
     to: "/transactions",
     key: "transactions",
     getLabel: () => t("common.transactions"),
-    icon: Receipt,
+    icon: ReceiptText,
   },
   { to: "/accounts", key: "accounts", getLabel: () => t("common.accounts"), icon: Wallet },
   { to: "/budget", key: "budget", getLabel: () => t("common.budget"), icon: PiggyBank },
   { to: "/goals", key: "goals", getLabel: () => t("common.goals"), icon: Target },
-  { to: "/assets", key: "assets", getLabel: () => t("common.assets"), icon: LineChart },
+  { to: "/assets", key: "assets", getLabel: () => t("common.assets"), icon: Coins },
   { to: "/reports", key: "reports", getLabel: () => t("common.reports"), icon: BarChart3 },
 ];
 
