@@ -4,6 +4,7 @@ packages:
 allowBuilds:
   esbuild: true
   lefthook: true
+  msw: true
 
 catalog:
   "happy-dom": "^17.1.5"
