@@ -2,7 +2,8 @@
   display: flex;
   min-height: 100vh;
   width: 100vw;
-  background-color: var(--color-brand-white);
+  background-color: var(--color-bg-default);
+  color: var(--color-text-primary);
 }
 
 .mainContent {

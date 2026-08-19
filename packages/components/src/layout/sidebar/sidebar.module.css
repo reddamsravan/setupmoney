@@ -126,6 +126,14 @@
   padding: var(--spacing-12) var(--spacing-16);
   border-top: var(--border-width-1) solid var(--sidebar-border);
   box-sizing: border-box;
+  gap: var(--spacing-8);
+}
+
+.sidebar.collapsed .footer {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-12) var(--spacing-8);
 }
 
 .toggle {

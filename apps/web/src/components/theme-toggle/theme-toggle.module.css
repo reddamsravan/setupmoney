@@ -1,0 +1,25 @@
+.themeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--sizing-32);
+  height: var(--sizing-32);
+  border-radius: var(--border-radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--sidebar-item-text-color);
+  cursor: pointer;
+  transition:
+    background-color 150ms ease-in-out,
+    color 150ms ease-in-out;
+}
+
+.themeToggle:hover {
+  background-color: var(--sidebar-item-background-hover);
+  color: var(--sidebar-item-text-active);
+}
+
+.themeToggle:focus-visible {
+  outline: 2px solid var(--sidebar-item-text-active);
+  outline-offset: 2px;
+}

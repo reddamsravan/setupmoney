@@ -10,6 +10,7 @@ import PiggyBank from "lucide-solid/icons/piggy-bank";
 import Target from "lucide-solid/icons/target";
 import LineChart from "lucide-solid/icons/line-chart";
 import BarChart3 from "lucide-solid/icons/bar-chart-3";
+import { ThemeToggle } from "../theme-toggle/theme-toggle";
 import styles from "./navigation.module.css";
 
 export interface NavItemDef {
@@ -83,6 +84,7 @@ export const Navigation: Component = () => {
           </Sidebar.Nav>
 
           <Sidebar.Footer>
+            <ThemeToggle />
             <Sidebar.Toggle />
           </Sidebar.Footer>
         </Sidebar>

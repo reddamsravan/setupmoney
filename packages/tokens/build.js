@@ -35,7 +35,7 @@ const themeLightSd = new StyleDictionary({
           filter: (token) => token.filePath && token.filePath.includes("light.json"),
           options: {
             outputReferences: true,
-            selector: ':root, [data-theme="light"]',
+            selector: ':root:not([data-theme="dark"]), [data-theme="light"]',
           },
         },
       ],
@@ -66,7 +66,7 @@ const themeDarkSd = new StyleDictionary({
           filter: (token) => token.filePath && token.filePath.includes("dark.json"),
           options: {
             outputReferences: true,
-            selector: "@media (prefers-color-scheme: dark) {\n  :root",
+            selector: '@media (prefers-color-scheme: dark) {\n  :root:not([data-theme="light"])',
           },
         },
       ],

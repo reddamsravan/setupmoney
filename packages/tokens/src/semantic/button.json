@@ -1,19 +1,19 @@
 {
   "button": {
     "primary": {
-      "background": { "value": "{color.brand.black}", "type": "color" },
-      "text": { "value": "{color.brand.white}", "type": "color" },
-      "hover": { "value": "{color.gray.800}", "type": "color" }
+      "background": { "value": "{color.bg.emphasis}", "type": "color" },
+      "text": { "value": "{color.text.inverse}", "type": "color" },
+      "hover": { "value": "{color.text.secondary}", "type": "color" }
     },
     "secondary": {
-      "background": { "value": "{color.gray.100}", "type": "color" },
-      "text": { "value": "{color.brand.black}", "type": "color" },
-      "hover": { "value": "{color.gray.200}", "type": "color" }
+      "background": { "value": "{color.bg.muted}", "type": "color" },
+      "text": { "value": "{color.text.primary}", "type": "color" },
+      "hover": { "value": "{color.border.default}", "type": "color" }
     },
     "ghost": {
       "background": { "value": "transparent", "type": "color" },
-      "text": { "value": "{color.gray.700}", "type": "color" },
-      "hover": { "value": "{color.gray.100}", "type": "color" }
+      "text": { "value": "{color.text.secondary}", "type": "color" },
+      "hover": { "value": "{color.bg.subtle}", "type": "color" }
     },
     "danger": {
       "background": { "value": "{color.accent.red.500}", "type": "color" },
