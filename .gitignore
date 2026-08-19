@@ -19,3 +19,4 @@ Thumbs.db
 .cache/
 *.tsbuildinfo
 .turbo/
+task.md
