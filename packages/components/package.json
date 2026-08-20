@@ -22,7 +22,7 @@
   "devDependencies": {
     "happy-dom": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-solid": "^2.11.14",
+    "vite-plugin-solid": "catalog:",
     "vitest": "catalog:"
   },
   "peerDependencies": {
