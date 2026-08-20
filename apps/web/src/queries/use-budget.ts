@@ -1,18 +1,17 @@
 import { createQuery, createMutation, useQueryClient } from "@tanstack/solid-query";
-import { apiService, type UpdateBudgetDTO } from "@setupmoney/api";
-import { budgetKeys } from "./query-keys";
+import { api, type UpdateBudgetDTO } from "@setupmoney/api";
 
 export function useBudgetQuery() {
   return createQuery(() => ({
-    queryKey: budgetKeys.lists(),
-    queryFn: ({ signal }) => apiService.budget.list({ signal }),
+    queryKey: api.budget.keys.lists(),
+    queryFn: ({ signal }) => api.budget.list({ signal }),
   }));
 }
 
 export function useBudgetCategoryDetailQuery(category: () => string) {
   return createQuery(() => ({
-    queryKey: budgetKeys.detail(category()),
-    queryFn: ({ signal }) => apiService.budget.detail(category(), { signal }),
+    queryKey: api.budget.keys.detail(category()),
+    queryFn: ({ signal }) => api.budget.detail(category(), { signal }),
     enabled: Boolean(category()),
   }));
 }
@@ -21,9 +20,9 @@ export function useUpdateBudgetMutation() {
   const queryClient = useQueryClient();
 
   return createMutation(() => ({
-    mutationFn: (data: UpdateBudgetDTO) => apiService.budget.update(data),
+    mutationFn: (data: UpdateBudgetDTO) => api.budget.update(data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: budgetKeys.all });
+      queryClient.invalidateQueries({ queryKey: api.budget.keys.all });
     },
   }));
 }

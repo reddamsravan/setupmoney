@@ -1,3 +1,3 @@
 export { ApiError } from "./client";
-export * from "./services/api-service";
+export * from "./api-client";
 export * from "./types";

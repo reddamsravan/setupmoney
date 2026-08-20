@@ -69,9 +69,11 @@ export const Navigation: Component = () => {
 
                 return (
                   <Sidebar.Item active={isActive()} title={label()}>
-                    {(itemProps) => (
+                    {(itemProps: { collapsed: boolean; class: string }) => (
                       <Link to={item.to} class={itemProps.class}>
-                        <Icon size={18} style={{ "flex-shrink": 0 }} />
+                        <span style={{ display: "inline-flex", "flex-shrink": 0 }}>
+                          <Icon size={18} />
+                        </span>
                         <Show when={!itemProps.collapsed}>
                           <span class={styles.navLabel}>{label()}</span>
                         </Show>

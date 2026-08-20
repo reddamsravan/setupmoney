@@ -1,22 +1,17 @@
 import { createQuery, createMutation, useQueryClient } from "@tanstack/solid-query";
-import {
-  apiService,
-  type CreateTransactionDTO,
-  type TransactionFilterParams,
-} from "@setupmoney/api";
-import { transactionKeys, accountKeys, budgetKeys, reportKeys } from "./query-keys";
+import { api, type CreateTransactionDTO, type TransactionFilterParams } from "@setupmoney/api";
 
 export function useTransactionsQuery(params: () => TransactionFilterParams | undefined) {
   return createQuery(() => ({
-    queryKey: transactionKeys.list(params()),
-    queryFn: ({ signal }) => apiService.transactions.list(params(), { signal }),
+    queryKey: api.transactions.keys.list(params()),
+    queryFn: ({ signal }) => api.transactions.list(params(), { signal }),
   }));
 }
 
 export function useTransactionDetailQuery(id: () => string) {
   return createQuery(() => ({
-    queryKey: transactionKeys.detail(id()),
-    queryFn: ({ signal }) => apiService.transactions.detail(id(), { signal }),
+    queryKey: api.transactions.keys.detail(id()),
+    queryFn: ({ signal }) => api.transactions.detail(id(), { signal }),
     enabled: Boolean(id()),
   }));
 }
@@ -25,12 +20,12 @@ export function useCreateTransactionMutation() {
   const queryClient = useQueryClient();
 
   return createMutation(() => ({
-    mutationFn: (data: CreateTransactionDTO) => apiService.transactions.create(data),
+    mutationFn: (data: CreateTransactionDTO) => api.transactions.create(data),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: transactionKeys.all });
-      queryClient.invalidateQueries({ queryKey: accountKeys.all });
-      queryClient.invalidateQueries({ queryKey: budgetKeys.all });
-      queryClient.invalidateQueries({ queryKey: reportKeys.all });
+      queryClient.invalidateQueries({ queryKey: api.transactions.keys.all });
+      queryClient.invalidateQueries({ queryKey: api.accounts.keys.all });
+      queryClient.invalidateQueries({ queryKey: api.budget.keys.all });
+      queryClient.invalidateQueries({ queryKey: api.reports.keys.all });
     },
   }));
 }

@@ -21,7 +21,8 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsdown src/index.ts src/node.ts --no-dts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@mswjs/http-middleware": "^0.10.3",

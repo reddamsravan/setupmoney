@@ -10,3 +10,5 @@ export interface CreateGoalDTO {
   targetAmount: number;
   currentAmount: number;
 }
+
+export interface UpdateGoalDTO extends Partial<CreateGoalDTO> {}

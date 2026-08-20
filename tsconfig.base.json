@@ -12,6 +12,15 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "verbatimModuleSyntax": true
+    "types": ["vitest/globals"],
+    "verbatimModuleSyntax": true,
+
+    "paths": {
+      "@setupmoney/api": ["./packages/api/src/index.ts"],
+      "@setupmoney/components": ["./packages/components/src/index.ts"],
+      "@setupmoney/i18n": ["./packages/i18n/src/index.ts"],
+      "@setupmoney/utils": ["./packages/utils/src/index.ts"],
+      "@setupmoney/mock-service": ["./services/mock-service/src/index.ts"]
+    }
   }
 }

@@ -10,7 +10,7 @@ export interface ShortcutDefinition {
   category: ShortcutCategory;
 }
 
-export const SHORTCUTS: Record<string, ShortcutDefinition> = {
+export const SHORTCUTS = {
   TOGGLE_SIDEBAR: {
     id: "toggle-sidebar",
     keys: {
@@ -20,4 +20,4 @@ export const SHORTCUTS: Record<string, ShortcutDefinition> = {
     label: "Toggle Sidebar",
     category: "navigation",
   },
-} as const;
+} as const satisfies Record<string, ShortcutDefinition>;

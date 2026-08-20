@@ -10,3 +10,5 @@ export interface CreateAssetDTO {
   value: number;
   type: string;
 }
+
+export interface UpdateAssetDTO extends Partial<CreateAssetDTO> {}

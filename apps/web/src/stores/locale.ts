@@ -1,5 +1,5 @@
 import { createSignal } from "solid-js";
-import { setLocale as setI18nLocale, SupportedLocale } from "@setupmoney/i18n";
+import { setLocale as setI18nLocale, type SupportedLocale } from "@setupmoney/i18n";
 
 const STORAGE_KEY = "setupmoney_locale";
 

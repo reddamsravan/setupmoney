@@ -29,13 +29,14 @@ export function registerShortcutListener(
     const targetCombo = isMac ? shortcut.keys.mac : shortcut.keys.default;
 
     const parts = targetCombo.split("+");
-    const keyNeeded = parts[parts.length - 1];
+    const keyNeeded = parts[parts.length - 1] ?? "";
     const needsMeta = parts.includes("Meta");
     const needsCtrl = parts.includes("Control");
     const needsShift = parts.includes("Shift");
     const needsAlt = parts.includes("Alt");
 
     if (
+      keyNeeded &&
       event.key.toLowerCase() === keyNeeded.toLowerCase() &&
       event.metaKey === needsMeta &&
       event.ctrlKey === needsCtrl &&

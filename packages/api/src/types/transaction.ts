@@ -11,6 +11,8 @@ export interface CreateTransactionDTO {
   date: string;
 }
 
+export interface UpdateTransactionDTO extends Partial<CreateTransactionDTO> {}
+
 export interface TransactionFilterParams {
   search?: string;
   category?: string;
