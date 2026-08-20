@@ -25,10 +25,9 @@
     "@setupmoney/mock-service": "workspace:*",
     "@tanstack/router-plugin": "^1.168.23",
     "happy-dom": "catalog:",
-    "msw": "^2.15.0",
     "typescript": "catalog:",
     "vite": "catalog:",
-    "vite-plugin-solid": "^2.11.14",
+    "vite-plugin-solid": "catalog:",
     "vitest": "catalog:"
   }
 }
