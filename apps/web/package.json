@@ -10,6 +10,7 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@setupmoney/api": "workspace:*",
     "@setupmoney/components": "workspace:*",
     "@setupmoney/i18n": "workspace:*",
     "@setupmoney/tokens": "workspace:*",
