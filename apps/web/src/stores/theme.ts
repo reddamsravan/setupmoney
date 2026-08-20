@@ -1,48 +1,116 @@
-import { createSignal } from "solid-js";
+import { createSignal, type Accessor } from "solid-js";
 
 export type Theme = "light" | "dark";
 
-const STORAGE_KEY = "setupmoney_theme";
+export interface ThemeStorageAdapter {
+  getItem(key: string): string | null;
+  setItem(key: string, value: string): void;
+}
 
-function getInitialTheme(): Theme {
-  if (typeof window === "undefined") return "light";
-  const saved = localStorage.getItem(STORAGE_KEY) as Theme | null;
-  if (saved === "light" || saved === "dark") {
-    return saved;
+export class InMemoryStorageAdapter implements ThemeStorageAdapter {
+  private store = new Map<string, string>();
+
+  getItem(key: string): string | null {
+    return this.store.get(key) ?? null;
   }
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+
+  setItem(key: string, value: string): void {
+    this.store.set(key, value);
+  }
+}
+
+export class LocalStorageAdapter implements ThemeStorageAdapter {
+  getItem(key: string): string | null {
+    if (typeof window === "undefined" || !window.localStorage) return null;
+    try {
+      return localStorage.getItem(key);
+    } catch {
+      return null;
+    }
+  }
+
+  setItem(key: string, value: string): void {
+    if (typeof window === "undefined" || !window.localStorage) return;
+    try {
+      localStorage.setItem(key, value);
+    } catch {
+      // Ignore quota or disabled storage errors
+    }
+  }
+}
+
+export interface ThemeStoreOptions {
+  storageKey?: string;
+  storage?: ThemeStorageAdapter;
+  onThemeChange?: (theme: Theme) => void;
+  preferredColorScheme?: () => Theme;
+}
+
+export interface ThemeStore {
+  theme: Accessor<Theme>;
+  setTheme: (theme: Theme) => void;
+  toggleTheme: () => void;
+}
+
+const DEFAULT_STORAGE_KEY = "setupmoney_theme";
+
+function defaultPreferredColorScheme(): Theme {
+  if (
+    typeof window !== "undefined" &&
+    window.matchMedia?.("(prefers-color-scheme: dark)").matches
+  ) {
     return "dark";
   }
   return "light";
 }
 
-const initial = getInitialTheme();
-if (typeof document !== "undefined") {
-  document.documentElement.setAttribute("data-theme", initial);
+function defaultOnThemeChange(theme: Theme): void {
+  if (typeof document !== "undefined") {
+    document.documentElement.setAttribute("data-theme", theme);
+  }
 }
 
-const [currentTheme, setCurrentThemeSignal] = createSignal<Theme>(initial);
+export function createThemeStore(options: ThemeStoreOptions = {}): ThemeStore {
+  const key = options.storageKey ?? DEFAULT_STORAGE_KEY;
+  const storage = options.storage ?? new LocalStorageAdapter();
+  const getPreferred = options.preferredColorScheme ?? defaultPreferredColorScheme;
+  const onThemeChange = options.onThemeChange ?? defaultOnThemeChange;
 
-export function useTheme() {
-  if (typeof document !== "undefined" && !document.documentElement.hasAttribute("data-theme")) {
-    document.documentElement.setAttribute("data-theme", currentTheme());
+  function determineInitialTheme(): Theme {
+    const saved = storage.getItem(key) as Theme | null;
+    if (saved === "light" || saved === "dark") {
+      return saved;
+    }
+    return getPreferred();
   }
 
-  const setTheme = (theme: Theme) => {
-    setCurrentThemeSignal(theme);
-    if (typeof window !== "undefined") {
-      localStorage.setItem(STORAGE_KEY, theme);
-      document.documentElement.setAttribute("data-theme", theme);
-    }
+  const initialTheme = determineInitialTheme();
+  onThemeChange(initialTheme);
+
+  const [theme, setThemeSignal] = createSignal<Theme>(initialTheme);
+
+  const setTheme = (nextTheme: Theme) => {
+    setThemeSignal(nextTheme);
+    storage.setItem(key, nextTheme);
+    onThemeChange(nextTheme);
   };
 
   const toggleTheme = () => {
-    setTheme(currentTheme() === "dark" ? "light" : "dark");
+    setTheme(theme() === "dark" ? "light" : "dark");
   };
 
   return {
-    theme: currentTheme,
+    theme,
     setTheme,
     toggleTheme,
   };
+}
+
+let defaultStoreInstance: ThemeStore | undefined;
+
+export function useTheme(): ThemeStore {
+  if (!defaultStoreInstance) {
+    defaultStoreInstance = createThemeStore();
+  }
+  return defaultStoreInstance;
 }
