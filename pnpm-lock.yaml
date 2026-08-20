@@ -59,6 +59,9 @@ importers:
       '@setupmoney/utils':
         specifier: workspace:*
         version: link:../../packages/utils
+      '@tanstack/solid-query':
+        specifier: ^5.101.4
+        version: 5.101.4(solid-js@1.9.14)
       '@tanstack/solid-router':
         specifier: ^1.170.18
         version: 1.170.18(solid-js@1.9.14)
@@ -1103,6 +1106,9 @@ packages:
     resolution: {integrity: sha512-79pf/RkhteYZTRgcR4F9kbk84P2N8rugQJswxfIqovlbRiT3yI7eBE+5QorIrZaOKktsgzRlXh1l/du/xpl4iA==}
     engines: {node: '>=20.19'}
 
+  '@tanstack/query-core@5.101.4':
+    resolution: {integrity: sha512-gNwcvOJcRbLWPOLG/2OBm+zM+Yv+MKsXKEOWC57USuZDEsI71hEErQsiEGx5wX9rzWWkfwM0fVSPoiIFSsxfiw==}
+
   '@tanstack/router-core@1.171.15':
     resolution: {integrity: sha512-IILCDcLaItMZQ2jEmCABHY1Nhjjn5XUvwpQp3e4Nmu+vfg0BgYFuu/QASz2SwE2ZNbVMrvt8X/wxa+Gg5aErxA==}
     engines: {node: '>=20.19'}
@@ -1135,6 +1141,11 @@ packages:
   '@tanstack/router-utils@1.162.2':
     resolution: {integrity: sha512-hTWqJtqIFFdvuCl8WXNyrodp2L9zo2G37xKRrcVmVRWpAB2h+U1LuRAfS4tsFTiWOIoE/B+WDVFB8JpoEdw6jQ==}
     engines: {node: '>=20.19'}
+
+  '@tanstack/solid-query@5.101.4':
+    resolution: {integrity: sha512-w+QNX4al4zkfOfO6FYILouPX3yAxLANvBNz0cZqaBrSRKfBP3qNC179wu/eS2w1asH+QqEeI0rR2/s7gRGxnFA==}
+    peerDependencies:
+      solid-js: ^1.6.0
 
   '@tanstack/solid-router@1.170.18':
     resolution: {integrity: sha512-Og4LS3bfBMa8qzRrWMsxBq1qc982wG8l5XEWMReossEphUnTua4ffMnC6Eq6HTCrZ1QlsBQCWQRaAX3lwAxaHw==}
@@ -3315,6 +3326,8 @@ snapshots:
 
   '@tanstack/history@1.162.0': {}
 
+  '@tanstack/query-core@5.101.4': {}
+
   '@tanstack/router-core@1.171.15':
     dependencies:
       '@tanstack/history': 1.162.0
@@ -3371,6 +3384,11 @@ snapshots:
       tinyglobby: 0.2.17
     transitivePeerDependencies:
       - supports-color
+
+  '@tanstack/solid-query@5.101.4(solid-js@1.9.14)':
+    dependencies:
+      '@tanstack/query-core': 5.101.4
+      solid-js: 1.9.14
 
   '@tanstack/solid-router@1.170.18(solid-js@1.9.14)':
     dependencies:
