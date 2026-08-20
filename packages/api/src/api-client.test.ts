@@ -1,6 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { createApiClient, api } from "./api-client";
-import { ApiError } from "./client";
+import { createApiClient, api, ApiError } from "./api-client";
 
 describe("ApiClient (Deep Module)", () => {
   const originalFetch = globalThis.fetch;
