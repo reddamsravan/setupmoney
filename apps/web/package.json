@@ -20,6 +20,7 @@
     "solid-js": "catalog:"
   },
   "devDependencies": {
+    "@setupmoney/mock-service": "workspace:*",
     "@tanstack/router-plugin": "^1.168.23",
     "happy-dom": "catalog:",
     "msw": "^2.15.0",

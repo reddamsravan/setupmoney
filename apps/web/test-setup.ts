@@ -1,5 +1,5 @@
 import { beforeAll, afterEach, afterAll } from "vitest";
-import { server } from "./src/mocks/server";
+import { server } from "@setupmoney/mock-service/node";
 
 beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
 afterEach(() => server.resetHandlers());

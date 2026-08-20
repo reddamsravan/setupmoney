@@ -14,22 +14,10 @@ declare module "@tanstack/solid-router" {
   }
 }
 
-async function enableMocking() {
-  if (!import.meta.env.DEV) {
-    return;
-  }
-  const { worker } = await import("./mocks/browser");
-  return worker.start({
-    onUnhandledRequest: "bypass",
-  });
-}
-
 const root = document.getElementById("app");
 
 if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
   throw new Error("The required element with ID 'app' was not found.");
 }
 
-enableMocking().then(() => {
-  render(() => <RouterProvider router={router} />, root!);
-});
+render(() => <RouterProvider router={router} />, root!);

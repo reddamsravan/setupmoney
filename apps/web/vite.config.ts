@@ -10,4 +10,12 @@ export default defineConfig({
     }),
     solid(),
   ],
+  server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8080",
+        changeOrigin: true,
+      },
+    },
+  },
 });

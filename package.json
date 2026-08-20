@@ -18,10 +18,5 @@
     "oxfmt": "catalog:",
     "oxlint": "catalog:"
   },
-  "packageManager": "pnpm@11.18.0",
-  "msw": {
-    "workerDirectory": [
-      "apps/web/public"
-    ]
-  }
+  "packageManager": "pnpm@11.18.0"
 }
