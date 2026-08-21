@@ -1,6 +1,7 @@
 import { createRootRoute, Outlet } from "@tanstack/solid-router";
 import { QueryClientProvider } from "@tanstack/solid-query";
 import { AppLayout } from "../components/layout/app-layout";
+import { ErrorFallback } from "../components/error-boundary/error-fallback";
 import { queryClient } from "../query-client";
 
 const Root = () => (
@@ -11,4 +12,7 @@ const Root = () => (
   </QueryClientProvider>
 );
 
-export const Route = createRootRoute({ component: Root });
+export const Route = createRootRoute({
+  component: Root,
+  errorComponent: (props) => <ErrorFallback variant="full-page" {...props} />,
+});
