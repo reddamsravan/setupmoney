@@ -19,6 +19,5 @@ Thumbs.db
 .cache/
 *.tsbuildinfo
 .turbo/
-task.md
 .agents/
 .scratch/
