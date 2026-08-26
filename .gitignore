@@ -21,3 +21,5 @@ Thumbs.db
 .turbo/
 .agents/
 .scratch/
+docs/.prompts-and-prayers/
+docs/.tasks/
