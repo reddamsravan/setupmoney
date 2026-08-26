@@ -1,33 +1,32 @@
-# setupmoney — Agent Rules
+# setupmoney: Agent Rules
 
 ## Project Overview
 
-setupmoney is a self-hosted personal finance web app. It is a pnpm monorepo with a Go backend service. Users self-host via Docker Compose. The project targets single users, families, and small independent groups.
-
----
+setupmoney is a self-hosted personal finance web application.
+The repository uses a pnpm monorepo structure with a Go backend service.
+Users self-host the application using Docker Compose.
+The project targets single users, families, and small independent groups.
 
 ## Monorepo Structure
 
 ```
 setupmoney/
 ├── packages/
-│   ├── tokens/        # @setupmoney/tokens  — Style Dictionary design tokens → CSS custom properties
-│   ├── components/    # @setupmoney/components — SolidJS UI component library (tsdown)
-│   └── utils/         # @setupmoney/utils   — Shared formatters (currency, date, numbers)
+│   ├── tokens/        # @setupmoney/tokens: Style Dictionary design tokens -> CSS custom properties
+│   ├── components/    # @setupmoney/components: SolidJS UI component library
+│   └── utils/         # @setupmoney/utils: Shared formatters (currency, date, numbers)
 ├── apps/
-│   └── web/           # @setupmoney/web     — SolidJS app (Vite + TanStack Router)
+│   └── web/           # @setupmoney/web: SolidJS app (Vite + TanStack Router)
 └── services/
     └── app-service/   # Go REST API (Chi, sqlc, goose, PostgreSQL)
 ```
 
-Packages are consumed as workspace dependencies using `"workspace:*"`.
-
----
+Packages consume workspace dependencies using `"workspace:*"`.
 
 ## Tech Stack
 
 | Layer                   | Technology                                                                              |
-| ----------------------- | --------------------------------------------------------------------------------------- |
+| :---------------------- | :-------------------------------------------------------------------------------------- |
 | Frontend framework      | SolidJS (not React)                                                                     |
 | Routing                 | TanStack Solid Router (file-based, `src/routes/`)                                       |
 | Build tool (app)        | Vite                                                                                    |
@@ -39,29 +38,25 @@ Packages are consumed as workspace dependencies using `"workspace:*"`.
 | Package manager         | pnpm (workspace)                                                                        |
 | Backend language        | Go                                                                                      |
 | HTTP router             | Chi                                                                                     |
-| DB access               | sqlc (type-safe Go from SQL) — never GORM                                               |
+| DB access               | sqlc (type-safe Go from SQL)                                                            |
 | Migrations              | goose                                                                                   |
 | Database                | PostgreSQL                                                                              |
 | Logging                 | `slog` (Go stdlib)                                                                      |
 | Config                  | godotenv (`.env` file)                                                                  |
-| Auth                    | Authentik (OIDC) — JWT + HttpOnly cookies                                               |
+| Auth                    | Authentik (OIDC): JWT + HttpOnly cookies                                                |
 | Live reload (Go)        | air                                                                                     |
 | Containerisation        | Docker + Docker Compose                                                                 |
 
----
-
 ## Naming Conventions
 
-- **Files**: `kebab-case` (e.g. `button.tsx`, `format-currency.ts`, `user-repo.go`)
-- **SolidJS components**: `PascalCase` (e.g. `Button`, `TransactionTable`)
-- **Types / interfaces / Go structs**: `PascalCase`
-- **Variables and functions**: `camelCase` (TS/JS), `camelCase` (Go unexported), `PascalCase` (Go exported)
-- **CSS custom properties**: `--color-background-primary` (Style Dictionary default, no brand prefix)
-- **CSS Module classes**: `camelCase` (e.g. `styles.primaryButton`)
-- **Go packages**: `lowercase`, single word (e.g. `accounts`, `auth`, `budget`)
-- **Go domain folders**: `internal/<domain>/` with `handler.go`, `service.go`, `repo.go`
-
----
+- Files: The developer SHALL use `kebab-case` names (for example `button.tsx`, `format-currency.ts`, `user-repo.go`).
+- SolidJS components: The developer SHALL use `PascalCase` names (for example `Button`, `TransactionTable`).
+- Types, interfaces, and Go structs: The developer SHALL use `PascalCase` names.
+- Variables and functions: The developer SHALL use `camelCase` for TypeScript and unexported Go symbols; use `PascalCase` for exported Go symbols.
+- CSS custom properties: The developer SHALL use `--color-background-primary` default Style Dictionary naming without brand prefixes.
+- CSS Module classes: The developer SHALL use `camelCase` names (for example `styles.primaryButton`).
+- Go packages: The developer SHALL use lowercase single-word names (for example `accounts`, `auth`, `budget`).
+- Go domain directories: The developer SHALL use `internal/<domain>/` containing `handler.go`, `service.go`, and `repo.go`.
 
 ## Key Commands
 
@@ -91,41 +86,36 @@ cd packages/tokens
 pnpm build        # Run Style Dictionary to regenerate build/css/tokens.css
 ```
 
----
-
 ## Hard Constraints
 
-- **Always follow Test-Driven Development (TDD)**: Write failing tests FIRST before writing or modifying any implementation code. Run the failing test to confirm red status, implement minimal code to pass (green), and refactor.
-- **Never install a new dependency** (npm or Go) without asking the user first.
-- **Never modify auto-generated files**: `src/routeTree.gen.ts` and all files under `services/app-service/db/generated/` are auto-generated — do not edit them by hand.
-- **Always run `pnpm fmt` and `pnpm lint:fix`** after making changes to JS/TS files.
-- **Always run `go vet ./...`** after making changes to Go files.
-- **Never commit `.env` files** or any file containing secrets. Only `.env.example` is committed.
-- **Never use GORM** for database access. All DB queries go through sqlc-generated code.
-
----
+- The agent MUST follow Test-Driven Development (TDD) by writing failing tests first.
+- The agent SHALL NOT install new npm or Go dependencies without explicit user confirmation.
+- The agent SHALL NOT modify generated files under `src/routeTree.gen.ts` or `services/app-service/db/generated/`.
+- The agent SHALL run `pnpm fmt` and `pnpm lint:fix` after modifying JavaScript or TypeScript files.
+- The agent SHALL run `go vet ./...` after modifying Go files.
+- The agent SHALL NOT commit `.env` files or secrets.
+- The agent SHALL NOT use GORM for database access.
+- The agent SHALL execute all database queries through sqlc generated code.
 
 ## Test-Driven Development (TDD) Workflow
 
-Every feature, bugfix, utility, UI component, and API endpoint MUST follow the strict **Red-Green-Refactor** TDD cycle:
+Every feature, bugfix, utility, UI component, and API endpoint MUST follow the Red-Green-Refactor TDD cycle:
 
-1. **Red (Write Failing Test)**:
-   - **JS/TS packages (`apps/web`, `packages/components`, `packages/utils`)**: Create/update unit tests using Vitest (`.test.ts` / `.test.tsx`).
-   - **Go service (`services/app-service`)**: Create/update Go unit/handler tests (`*_test.go`).
-   - Run the test suite (`pnpm test` or `go test ./...`) and verify that the test **fails** for the expected reason.
-2. **Green (Minimal Implementation)**:
-   - Write the minimum amount of production code required to make the failing test pass.
-   - Re-run the test suite to verify all tests **pass cleanly**.
-3. **Refactor (Clean & Optimize)**:
-   - Refactor code and styles while keeping tests passing.
-   - Run linter/formatter (`pnpm fmt`, `pnpm lint:fix`, `go vet ./...`).
-
----
+1. Red (Write Failing Test):
+   - For JS and TS packages (`apps/web`, `packages/components`, `packages/utils`), the author SHALL create unit tests using Vitest (`.test.ts` or `.test.tsx`).
+   - For Go services (`services/app-service`), the author SHALL create Go unit tests (`*_test.go`).
+   - The developer SHALL execute the test suite (`pnpm test` or `go test ./...`) and verify test failure.
+2. Green (Minimal Implementation):
+   - The developer SHALL write minimal production code to pass the failing test.
+   - The developer SHALL execute the test suite to verify that all tests pass cleanly.
+3. Refactor (Clean & Optimize):
+   - The developer SHALL refactor code and styles while preserving passing tests.
+   - The developer SHALL run code quality tools (`pnpm fmt`, `pnpm lint:fix`, `go vet ./...`).
 
 ## Per-Package Rules
 
-More specific rules live in each package's own `AGENTS.md`:
+Specific guidelines reside in package documentation:
 
-- `packages/tokens/AGENTS.md` — token authoring rules
-- `packages/components/AGENTS.md` — component authoring rules
-- `services/app-service/AGENTS.md` — Go conventions (sqlc patterns, error handling, domain structure)
+- `packages/tokens/AGENTS.md`: Token authoring rules.
+- `packages/components/AGENTS.md`: Component authoring rules.
+- `services/app-service/AGENTS.md`: Go conventions for sqlc patterns, error handling, and domain structure.

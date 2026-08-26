@@ -1,36 +1,35 @@
-# @setupmoney/components — Agent Rules
+# @setupmoney/components: Agent Rules
 
 ## Overview
 
-`@setupmoney/components` is the SolidJS UI component library for setupmoney, built using `tsdown`. It consumes design tokens from `@setupmoney/tokens` via CSS custom properties and co-located CSS Modules.
-
----
+The `@setupmoney/components` package provides the SolidJS UI component library for setupmoney.
+The package builds outputs using `vite`.
+Components consume design tokens from `@setupmoney/tokens` using CSS custom properties and co-located CSS Modules.
 
 ## Naming & File Conventions
 
-- **File Names**: ALL file names must be strictly `kebab-case` (e.g. `button.tsx`, `button.module.css`, `card-header.tsx`).
-- **SolidJS Components**: Component functions must be named in `PascalCase` (e.g. `export function Button(...)`).
-- **CSS Modules**: Co-located with component files (e.g. `src/forms/button.module.css` beside `src/forms/button.tsx`). Class names inside module files use `camelCase` (e.g. `.primaryButton`).
-
----
+- File Names: Authors MUST format all file names using `kebab-case` (for example `button.tsx`, `button.module.css`, `card-header.tsx`).
+- SolidJS Components: Authors MUST name component functions using `PascalCase` (for example `export const Button: Component<ButtonProps>`).
+- CSS Modules: Authors MUST co-locate CSS Module files beside component files (for example `src/forms/button/button.module.css` beside `src/forms/button/button.tsx`).
+- Class Names: Authors MUST use `camelCase` class names inside module files (for example `.primaryButton`, `.sizeMd`).
 
 ## Directory Structure
 
 ```
 packages/components/
 ├── src/
-│   ├── forms/       # Button, Input, Select, Checkbox
-│   ├── layout/      # Card, Sidebar, Table
-│   ├── feedback/    # Badge, Modal, Spinner, Toast, Avatar
+│   ├── forms/       # Button, Input, Select, Checkbox, ColorPicker
+│   ├── layout/      # Card, Sidebar, Collapsible, Table
+│   ├── feedback/    # Badge, Modal, Dropdown, Spinner, Skeleton, Toast
 │   └── index.ts     # Barrel file re-exporting all components
 ├── package.json
 └── tsconfig.json
 ```
 
----
-
 ## Hard Constraints
 
-- **Strict Export Pattern**: Every component must be exported through `src/index.ts`.
-- **Token Usage**: Styles must consume `@setupmoney/tokens` custom properties (e.g. `var(--color-background-primary)`) instead of hardcoded raw values.
-- **Framework Target**: SolidJS only (JSX `preserve`, `jsxImportSource: solid-js`). Never use React.
+- The author MUST export every component through `src/index.ts`.
+- Component styles MUST consume `@setupmoney/tokens` custom properties (for example `var(--color-background-primary)`).
+- Component styles SHALL NOT use hardcoded raw color values.
+- The package MUST target SolidJS exclusively.
+- Authors SHALL NOT use React APIs or React dependencies.
