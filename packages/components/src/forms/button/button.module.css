@@ -1,0 +1,134 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: var(--border-radius-md);
+  border: var(--border-width-1) solid transparent;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  transition:
+    background-color 150ms ease-in-out,
+    border-color 150ms ease-in-out,
+    opacity 150ms ease-in-out,
+    color 150ms ease-in-out;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-text-primary);
+  outline-offset: 2px;
+}
+
+.button:disabled,
+.button[aria-busy="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Variants */
+.primary {
+  background-color: var(--color-bg-emphasis);
+  color: var(--color-text-inverse);
+  border-color: transparent;
+}
+
+.primary:hover:not(:disabled):not([aria-busy="true"]) {
+  opacity: 0.9;
+}
+
+.secondary {
+  background-color: var(--color-bg-default, #ffffff);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-strong);
+}
+
+.secondary:hover:not(:disabled):not([aria-busy="true"]) {
+  background-color: var(--color-bg-muted);
+}
+
+.danger {
+  background-color: var(--color-accent-red-500);
+  color: var(--color-brand-white);
+  border-color: transparent;
+}
+
+.danger:hover:not(:disabled):not([aria-busy="true"]) {
+  background-color: var(--color-accent-red-700);
+}
+
+.ghost {
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  border-color: transparent;
+}
+
+.ghost:hover:not(:disabled):not([aria-busy="true"]) {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text-primary);
+}
+
+/* Sizes */
+.sizeSm {
+  padding: var(--spacing-4) var(--spacing-8);
+  font-size: 0.75rem;
+  line-height: 1rem;
+  gap: var(--spacing-4);
+  min-height: 1.75rem;
+}
+
+.sizeMd {
+  padding: var(--spacing-8) var(--spacing-16);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  gap: var(--spacing-8);
+  min-height: 2.25rem;
+}
+
+.sizeLg {
+  padding: var(--spacing-12) var(--spacing-24);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  gap: var(--spacing-12);
+  min-height: 2.75rem;
+}
+
+/* Icon Only */
+.iconOnly {
+  padding: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.iconOnly.sizeSm {
+  width: 1.75rem;
+  min-width: 1.75rem;
+  height: 1.75rem;
+}
+
+.iconOnly.sizeMd {
+  width: 2.25rem;
+  min-width: 2.25rem;
+  height: 2.25rem;
+}
+
+.iconOnly.sizeLg {
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+}
+
+/* Full Width */
+.fullWidth {
+  width: 100%;
+}
+
+/* Icon Slots */
+.iconSlot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
