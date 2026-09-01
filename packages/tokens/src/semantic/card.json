@@ -1,7 +1,7 @@
 {
   "card": {
-    "background": { "value": "{color.bg.default}", "type": "color" },
-    "border": { "value": "{color.border.default}", "type": "color" },
+    "background": { "value": "var(--color-bg-default)", "type": "color" },
+    "border": { "value": "{border.width.1} solid var(--color-border-default)", "type": "border" },
     "border-radius": { "value": "{border.radius.md}", "type": "dimension" },
     "shadow": { "value": "{elevation.card}", "type": "shadow" },
     "padding": {

@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import path from "path";
 
 const baseSd = new StyleDictionary({
-  source: ["src/primitives/**/*.json", "src/semantic/**/*.json"],
+  source: ["src/primitives/**/*.json", "src/semantic/**/*.json", "src/themes/light.json"],
   platforms: {
     css: {
       transformGroup: "css",
@@ -12,9 +12,7 @@ const baseSd = new StyleDictionary({
         {
           destination: "tokens.css",
           format: "css/variables",
-          options: {
-            outputReferences: true,
-          },
+          filter: (token) => !token.filePath?.includes("light.json"),
         },
       ],
       expand: true,
@@ -98,3 +96,8 @@ const themeDarkMedia = await fs.readFile(path.join(buildCssDir, "theme-dark-medi
 
 const fullCss = `${mainTokens}\n${themeLight}\n${themeDarkMedia}\n${themeDark}`;
 await fs.writeFile(path.join(buildCssDir, "tokens.css"), fullCss, "utf-8");
+
+// Remove temp files
+try {
+  await fs.unlink(path.join(buildCssDir, "tokens-test.css"));
+} catch {}
