@@ -42,7 +42,7 @@ Packages consume workspace dependencies using `"workspace:*"`.
 | Migrations              | goose                                                                                   |
 | Database                | PostgreSQL                                                                              |
 | Logging                 | `slog` (Go stdlib)                                                                      |
-| Config                  | godotenv (`.env` file)                                                                  |
+| Config                  | `os.LookupEnv` (process environment variables)                                          |
 | Auth                    | Authentik (OIDC): JWT + HttpOnly cookies                                                |
 | Live reload (Go)        | air                                                                                     |
 | Containerisation        | Docker + Docker Compose                                                                 |
